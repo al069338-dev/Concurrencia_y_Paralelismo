@@ -11,7 +11,7 @@ int numHilos;
 sem_t sem;
 
 // Función generadora de números aleatorios segura para hilos
-// Evita el uso de rand() global y el error de rand_r() faltante
+// Evita el uso de rand() global ya que a mi me daba error
 unsigned int rand_hilo(unsigned int *estado) {
     *estado = (*estado * 1103515245 + 12345) & 0x7fffffff;
     return *estado;
